@@ -11,7 +11,7 @@ class DocsView(APIView):
     RESTFul Documentation of my app
     """
     def get(self, request, *args, **kwargs):
-        apidocs = {'Api-root': request.build_absolute_uri('api'),
+        apidocs = {'Api-root': request.build_absolute_uri('api/v1/'),
                    }
         return Response(apidocs)
 
