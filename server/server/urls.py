@@ -23,3 +23,5 @@ urlpatterns = [
     path('api/v1/', include('app.api.urls')),
     path('', DocsView.as_view()),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

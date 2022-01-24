@@ -7,10 +7,6 @@
             <div
                 v-for="link in navLinks"
                 :key="link.code"
-                :class="{
-                    'border-b border-red-400': link.code == currentRouteName,
-                    '': link.code !== currentRouteName
-                }"
                 @click="goToLink(link)"
                 class="cursor-pointer items-center content-around text-xl font-light text-center px-3 py-1"
                 >
@@ -31,7 +27,7 @@ export default {
                 },
                 {
                 label: "Corsi",
-                code: "Course"
+                code: "Courses"
                 },
                 {
                 label: "About us",
@@ -60,6 +56,6 @@ export default {
             name: link.code
         });
         }
-  }
+    }
 }
 </script>

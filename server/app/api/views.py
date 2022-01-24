@@ -1,6 +1,6 @@
 from rest_framework import viewsets, generics
-from .serializers import GymsSerializer, CoursesSerializer
-from app.models import Gyms, Courses
+from .serializers import GymsSerializer, CoursesSerializer, CategorySerializer
+from app.models import Gyms, Courses, Category
 
 
 class GymsViewSet(viewsets.ModelViewSet):
@@ -16,3 +16,10 @@ class CoursesViewSet(viewsets.ModelViewSet):
     """
     serializer_class = CoursesSerializer
     queryset = Courses.objects.all()
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    """
+    list of Category or view a single Course
+    """
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()

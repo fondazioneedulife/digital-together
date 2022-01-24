@@ -21,6 +21,18 @@ class Gyms(models.Model):
     def __str__(self):
         return f'{self.nome}'
 
+class Category(models.Model):
+    id = models.AutoField(primary_key=True,  auto_created=True)
+    nome = models.CharField(max_length=80)
+    immagine = models.ImageField(null = True, editable = True)
+
+    class Meta:
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorie'
+        db_table = 'Categories'
+
+    def __str__(self):
+        return f'{self.nome}'
 
 class Courses(models.Model):
     id = models.AutoField(primary_key=True,  auto_created=True)
@@ -29,7 +41,8 @@ class Courses(models.Model):
     data_fine = models.DateField(auto_now=True)
     descrizione = models.CharField(max_length=200)
     docente = models.CharField(max_length=20)
-    idGym = models.ForeignKey(Gyms, related_name='corsi', on_delete=models.CASCADE)
+    idGym = models.ForeignKey(Gyms, related_name='corso', on_delete=models.CASCADE)
+    idCategory = models.ForeignKey(Category, related_name='categoria', default="", on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'corso'
