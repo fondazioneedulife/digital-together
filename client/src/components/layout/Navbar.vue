@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         currentRouteName() {
-            return this.$route.matched[0].name;
+            return this.$route.matched[0].path;
         }
     },
     methods: {
