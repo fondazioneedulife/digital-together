@@ -1,7 +1,7 @@
 <template>
     <div class="flex px-6 py-8  bg-white m-auto border-b border-black">
         <div class="">
-            <img class="w-38 h-20" :src="logo"/>
+            <img class="w-38 h-14" :src="logo"/>
         </div>
         <div class="flex justify-center items-center mx-auto">
             <div
