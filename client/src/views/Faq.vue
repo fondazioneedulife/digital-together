@@ -1,6 +1,5 @@
 <template>
     <div>
-        <BotBanner></BotBanner>
         <section class="py-20 2xl:py-40 bg-red-50 h-screen">
         <div class="container px-4 mx-auto">
             <div class="mb-20 text-center">
@@ -47,13 +46,14 @@
     </div>
 </template>
 <script>
-import BotBanner from '@/components/BotBanner.vue'
+//import BotBanner from '@/components/BotBanner.vue'
 export default {
     name: 'Faq',
-    components:{ BotBanner },
+    components:{ //BotBanner 
+    },
     data(){
         return{
-            questions:['How should I develop my workflow over time?'],
+            questions:['How should I develop my workflow over time?', 'ebwhifbwfhbibewbe'],
             answare:[''],
             isOpen:false,
         }

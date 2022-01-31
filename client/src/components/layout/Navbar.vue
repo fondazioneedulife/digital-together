@@ -1,17 +1,16 @@
 <template>
-    <div class="flex px-6 py-8  bg-white m-auto border-b border-black">
-        <div class="">
-            <img class="w-38 h-14" :src="logo"/>
+    <div class="flex bg-white border justify-between items-center px-10 py-0">
+        <div class="items-center rounded p-5 ">
+            <img class="w-38 h-20" :src="logo"/>
         </div>
-        <div class="flex justify-center items-center mx-auto">
-            <div
+        <div
                 v-for="link in navLinks"
                 :key="link.code"
+
                 @click="goToLink(link)"
-                class="cursor-pointer items-center content-around text-xl font-light text-center px-3 py-1"
+                class="cursor-pointer items-center text-center content-around text-xl font-light"
                 >
                 {{ link.label }}
-            </div>
         </div>
     </div>
 </template>
