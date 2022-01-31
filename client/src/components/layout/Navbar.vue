@@ -6,9 +6,8 @@
         <div
                 v-for="link in navLinks"
                 :key="link.code"
-
                 @click="goToLink(link)"
-                class="cursor-pointer items-center text-center content-around text-xl font-light"
+                class="cursor-pointer items-center text-center content-around text-xl mr-12 font-light"
                 >
                 {{ link.label }}
         </div>
@@ -22,23 +21,23 @@ export default {
             navLinks: [
                 {
                 label: "Home",
-                code: "Home"
+                code: "home"
                 },
                 {
                 label: "Corsi",
-                code: "Courses"
+                code: "course_list"
                 },
                 {
                 label: "About us",
-                code: "About"
+                code: "about"
                 },
                 {
                 label: "Contatti",
-                code: "Contact"
+                code: "contact"
                 },
                 {
                 label: "FAQ",
-                code: "Faq"
+                code: "faq"
                 }
             ],
             logo: image,
@@ -46,7 +45,7 @@ export default {
     },
     computed: {
         currentRouteName() {
-            return this.$route.matched[0].path;
+            return this.$route.matched[0].name;
         }
     },
     methods: {

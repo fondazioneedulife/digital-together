@@ -1,12 +1,13 @@
 <template>
     <div class="flex-col font-light">
-        <div class="flex text-3xl text-left px-5 py-6 m-auto">
+        <div class="flex text-3xl font-bold text-left px-5 py-6 m-auto">
             {{categoria.nome}}
         </div>
         <div>
             <img :src="categoria.immagine" alt="img">
         </div>
-        <div class="px-5 py-6 m-auto text-xl text-left">
+        <div class="flex-col justify-between px-5 py-6 m-auto text-xl text-left">
+            <span class="text-3xl font-bold">{{corso.nome}}</span> <br>
             {{corso.descrizione}}
         </div>
         <hr>
@@ -14,8 +15,8 @@
             caratteristiche:
         </h1>
         <div class="flex justify-around  px-5 py-6 ">
-            <p>durata: {{corso.data_inizio}}</p>
-            <p>numero ore: {{corso.data_fine}}</p>
+            <p>data inizio: {{corso.data_inizio}}</p>
+            <p>data fine: {{corso.data_fine}}</p>
         </div>
         <h1 class="px-5 py-6 text-xl text-red-400">
             contatti:

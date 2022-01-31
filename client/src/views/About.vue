@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-col m-10 px-4 py-3">
+    <div class="c flex-col m-10 px-4 py-3">
       <div class="font-bold m-8 text-2xl">
         Ciò che riguarda 
         <span class="text-3xl text-red-400">NOI</span>
@@ -21,3 +21,17 @@ export default {
   }
 }
 </script>
+<style>
+.a{
+    background-image:url('../assets/Ellipse8.svg');
+    background-position: right; 
+  background-repeat: no-repeat;
+  background-size: 380px 380px;
+}
+.c{
+    background-image:url('../assets/Ellipse8.svg');
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: 380px 380px;
+}
+</style>

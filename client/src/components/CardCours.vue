@@ -1,5 +1,5 @@
 <template>
-        <div class="flex-col items-center justify-center w-screen h-screen p-10 m-5">
+        <div class="flex-col items-center justify-center w-screen h-screen m-5 p-10 ml-24">
             <div class="grid grid-cols-1 xl:max-w-6xl max-w-4xl " v-for="corso in corsi" :key="corso.id">
                 <div class="flex bg-red-100 rounded-lg px-4 py-6 m-2 shadow-2xl">
                     <div class="flex flex-col items-start ml-4 w-full">

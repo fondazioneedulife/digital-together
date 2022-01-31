@@ -1,7 +1,11 @@
 <template>
-    <div class="m-3 px-3 py-4">
-        <Breadcrumb/>
-        <Detail/>
+    <div class="flex-col m-auto ml-12 px-3 py-4">
+        <div class="flex justify-start p-auto">
+            <Breadcrumb/>
+        </div>
+        <div>
+            <Detail/>
+        </div>
         <!-- <Map/> -->
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex-col">
         <div class="flex items-center justify-center px-3 py-4">
             <button class="shadow-xl font-light px-3 py-4 border rounded-lg hover:text-red-400 mr-4">All</button>
             <div v-for="categoria in categorie" :key="categoria.id">
@@ -9,9 +9,11 @@
             </div>
         </div>
         <div class="flex items-center justify-center px-3 py-4" v-if="errors.length">
-            <p class="text-red-400 font-light" v-for="error in errors" v-bind:key="error">**attenzione: {{ error }}</p>
+            <p class="text-red-400 font-light" v-for="error in errors" v-bind:key="error">**attenzione: {{ error }}**</p>
         </div>
-        <CardCours/>
+        <div class="flex items-center justify-center">
+            <CardCours/>
+        </div>
     </div>
 </template>
 <script>

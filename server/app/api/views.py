@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics
 from .serializers import GymsSerializer, CoursesSerializer, CategorySerializer
 from app.models import Gyms, Courses, Category
-
+from rest_framework.permissions import IsAuthenticated
 
 class GymsViewSet(viewsets.ModelViewSet):
     """
@@ -9,6 +9,7 @@ class GymsViewSet(viewsets.ModelViewSet):
     """
     serializer_class = GymsSerializer
     queryset = Gyms.objects.all()
+    #permission_classes = [IsAuthenticated]
 
 class CoursesViewSet(viewsets.ModelViewSet):
     """
@@ -16,6 +17,8 @@ class CoursesViewSet(viewsets.ModelViewSet):
     """
     serializer_class = CoursesSerializer
     queryset = Courses.objects.all()
+    #permission_classes = [IsAuthenticated]
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     """
@@ -23,3 +26,4 @@ class CategoryViewSet(viewsets.ModelViewSet):
     """
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
+    #permission_classes = [IsAuthenticated]

@@ -1,51 +1,30 @@
 <template>
-    <footer class="bg-gray-800 p-5 grid grid-cols-1 md:grid-cols-12">
-  <div class="md:col-span-2 pb-2 md:mb-0">
-    <p class="text-gray-200">Acme</p>
-    <ul class="pt-5 text-gray-400">
-      <li>Teardown</li>
-      <li>News</li>
-      <li>Partners</li>
-      <li>About Us</li>
-      <li>Contact Ud</li>
-      <li>Terms of Use</li>
-    </ul>
-  </div>
-  <div class="md:col-span-2 pb-2 md:mb-0">
-    <p class="text-gray-200">Social</p>
-    <ul class="pt-5 text-gray-400">
-      <li>Facebook</li>
-      <li>Twitter</li>
-      <li>Youtube</li>
-    </ul>
-  </div>
-  <div class="md:col-span-2 pb-2 md:mb-0">
-    <p class="text-gray-200">Service</p>
-    <ul class="pt-5 text-gray-400">
-      <li>Compare</li>
-      <li>Download</li>
-      <li>Feedback</li>
-      <li>Bug Report</li>
-    </ul>
-  </div>
-  <div class="md:col-span-2 pb-2 md:mb-0">
-      <p class="text-gray-200">Activity</p>
-    <ul class="pt-5 text-gray-400">
-      <li>Influencers</li>
-      <li>Affiliate</li>
-      <li>Co-Branding</li>
-      <li>Give Away</li>
-    </ul>
-  </div>
-  <div class="md:col-span-4 pb-2 md:mb-0">
-    <p class="text-gray-200">Newsletter Subscription</p>
-    <div class="pt-5">
-      <input type="text" class="rounded p-2 w-full" placeholder="@ Subscribe to our newsletter....">
-      <button class="bg-red-600 text-white px-3 py-2 rounded mt-2">Subscribe</button>
-    </div>
-  </div>
-  <div class="mt-5 md:col-span-12 text-center text-gray-400 pt-2">
-    Created by Kevin Monestel Amador
-  </div>
-</footer>
+    <footer class="bg-gray-800 p-5 grid grid-cols-1  md:grid-cols-12">
+      <div class="md:col-span-2 pb-2 md:mb-0 m-8">
+        <p class="text-gray-200">Contatti</p>
+        <ul class="pt-5 text-gray-400">
+          <li>351 524 3518</li>
+          <li>37100lab@comune.verona.it</li>
+          <li>vie Marchi, 12, 37135 Verona VR</li>
+        </ul>
+      </div>
+      <div class="md:col-span-2 pb-2 m-8 ml-32 md:mb-0">
+          <p class="text-gray-200">Pagine</p>
+        <ul class="pt-5 text-gray-400">
+          <li> <router-link to="/">Home</router-link> </li>
+          <li> <router-link to="/corsi">Corsi</router-link> </li>
+          <li> <router-link to="/about">About Us</router-link> </li>
+          <li> <router-link to="/faq">FAQ</router-link> </li>
+        </ul>
+      </div>
+      <div class="md:col-span-4 pb-2 m-8 ml-32 md:mb-0">
+        <ul class="pt-5 text-gray-400">
+          <li><img class="w-24 h-24" src='@/assets/Logo.svg'></li>
+          <li><img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" class="bg-white rounded-lg w-6 h-6"/></li>
+        </ul>
+      </div>
+      <div class="mt-5 md:col-span-12 text-center text-gray-400 pt-2">
+        Created by  Digital Together ®
+      </div>
+  </footer>
 </template>
