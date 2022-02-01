@@ -6,8 +6,12 @@
         <div
                 v-for="link in navLinks"
                 :key="link.code"
+                :class="{
+                    'border-b border-red-400': link.code == currentRouteName,
+                    '': link.code !== currentRouteName
+                }"
                 @click="goToLink(link)"
-                class="cursor-pointer items-center text-center content-around text-xl mr-12 font-light"
+                class="cursor-pointer font-light items-center text-center content-around text-xl mr-12"
                 >
                 {{ link.label }}
         </div>
@@ -45,6 +49,9 @@ export default {
     },
     computed: {
         currentRouteName() {
+            if (!this.$route.matched[0]){
+                return 
+            }
             return this.$route.matched[0].name;
         }
     },

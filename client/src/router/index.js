@@ -8,7 +8,7 @@ import Faq from '@/views/Faq.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'home',
     component: Home
   },

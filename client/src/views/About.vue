@@ -13,25 +13,3 @@
       </div>
     </div>
 </template>
-<script>
-export default {
-  data(){
-    return{
-    }
-  }
-}
-</script>
-<style>
-.a{
-    background-image:url('../assets/Ellipse8.svg');
-    background-position: right; 
-  background-repeat: no-repeat;
-  background-size: 380px 380px;
-}
-.c{
-    background-image:url('../assets/Ellipse8.svg');
-    background-position: left; 
-    background-repeat: no-repeat;
-    background-size: 380px 380px;
-}
-</style>

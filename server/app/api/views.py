@@ -1,8 +1,10 @@
+from unicodedata import category
 from rest_framework import viewsets, generics
 from .serializers import GymsSerializer, CoursesSerializer, CategorySerializer
 from app.models import Gyms, Courses, Category
-from rest_framework.permissions import IsAuthenticated
-
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 class GymsViewSet(viewsets.ModelViewSet):
     """
     list of gyms or view a single gym
@@ -27,3 +29,15 @@ class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
     #permission_classes = [IsAuthenticated]
+
+
+@api_view(['POST'])
+def search(request):
+    query = request.data.get('query', '')
+    print(query)
+    if query:
+        category = Category.objects.filter(nome=query) 
+        serializer = CategorySerializer(category, many=True)
+        return Response(serializer.data)
+    else:
+        return Response({"category": []})

@@ -1,5 +1,5 @@
 # 1
-aggiustare faq card.
+aggiustare faq card. - ok
 # 2 
 navigation bar - ok 
 
@@ -7,7 +7,7 @@ navigation bar - ok
 filter in lista corsi 
 
 # 4
-inserire la mappan 
+inserire la mappa
 
 # 5 
 creazione componente footer - ok

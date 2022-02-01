@@ -1,9 +1,9 @@
 <template>
     <div class="flex-col">
         <div class="flex items-center justify-center px-3 py-4">
-            <button class="shadow-xl font-light px-3 py-4 border rounded-lg hover:text-red-400 mr-4">All</button>
+            <button class="shadow-xl font-light px-3 py-4 border rounded-lg hover:text-red-400 mr-4" @click="reload()">Tutti i Corsi</button>
             <div v-for="categoria in categorie" :key="categoria.id">
-                <button class="shadow-xl font-light px-3 py-4 border rounded-lg hover:text-red-400 m-4" @click="orderList()">
+                <button class="shadow-xl font-light px-3 py-4 border rounded-lg hover:text-red-400 m-4" @click="orderList(categoria.nome)">
                     {{categoria.nome}}
                 </button>
             </div>
@@ -26,7 +26,9 @@ export default {
     data() {
         return{
             categorie:[],
-            errors:[]
+            query:'',
+            errors:[],
+            categoria:{}
         }
     },
     async mounted(){
@@ -46,10 +48,26 @@ export default {
                 })
     },
     methods:{
-        orderList(){
-
+        async orderList(categoria){
+            if(categoria != this.query){
+                this.query = categoria;
+            }
+            //let uri = window.location.search.substring(1)
+            //let params = new URLSearchParams(uri)
+            await axios
+                .post('/api/v1/corsi/search/',{'query':this.query})
+                .then(response => {
+                    this.categoria = response.data[0]
+                    console.log(this.categoria)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        reload(){
+            location.reload();
         }
-    }
+    },
 
 }
 </script>
