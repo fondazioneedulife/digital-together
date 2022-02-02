@@ -34,10 +34,10 @@ class CategoryViewSet(viewsets.ModelViewSet):
 @api_view(['POST'])
 def search(request):
     query = request.data.get('query', '')
-    print(query)
     if query:
-        category = Category.objects.filter(nome=query) 
-        serializer = CategorySerializer(category, many=True)
+        queryset = Category.objects.filter(nome=query) 
+        serializer = CategorySerializer(queryset, many=True)
+        print(queryset)
         return Response(serializer.data)
     else:
         return Response({"category": []})

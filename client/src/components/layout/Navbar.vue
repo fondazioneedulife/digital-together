@@ -1,27 +1,44 @@
 <template>
-    <div class="flex bg-white border justify-between items-center px-10 py-0">
-        <div class="items-center rounded p-5 ">
-            <img class="w-38 h-20" :src="logo"/>
-        </div>
+<div class="grid grid-cols-8 border-b border-black md:h-24 h-auto items-center justify-items-center justify-content-center">
+    <div class="col-start-2 col-end-3">
+        <img class="block w-32 h-24 " :src="logo"/>
+    </div>
+    <div class="fixed hidden md:col-start-3 md:col-end-5 md:contents">
         <div
-                v-for="link in navLinks"
-                :key="link.code"
-                :class="{
+            v-for="link in navLinks"
+            :key="link.code"
+            :class="{
                     'border-b border-red-400': link.code == currentRouteName,
                     '': link.code !== currentRouteName
-                }"
-                @click="goToLink(link)"
-                class="cursor-pointer font-light items-center text-center content-around text-xl mr-12"
-                >
-                {{ link.label }}
+            }"
+            @click="goToLink(link)"
+            class="cursor-pointer items-center content-around text-xl font-light text-center px-3 py-1"
+            >
+            {{ link.label }}
         </div>
     </div>
+
+    <div class='block md:hidden col-start-7 col-end-8'>
+        <button @click="open"><img class='w-10 h-10' :src="menu"/></button>
+    </div>
+    <div :class="show ? 'block': 'hidden' " class="bg-red-200 md:hidden w-full col-start-1 col-end-9 flex flex-col items-left p-1">
+        <div class='p-5 bg-white w-auto h-auto rounded-lg m-2 cursor-pointer'
+            v-for="link in navLinks"
+            :key="link.code"
+            @click="goToLink(link)">
+            {{ link.label }}
+        </div>
+    </div>
+    
+</div>
 </template>
 <script>
-import image from '@/assets/Logo.svg'
+import image from '@/assets/Logo.svg';
+import menu from '@/assets/Menuicon.svg';
 export default {
     data() {
         return{
+            show : false,
             navLinks: [
                 {
                 label: "Home",
@@ -45,6 +62,7 @@ export default {
                 }
             ],
             logo: image,
+            menu: menu,
         }
     },
     computed: {
@@ -60,6 +78,9 @@ export default {
         this.$router.push({
             name: link.code
         });
+        },
+        open: function() {
+            this.show = !this.show
         }
     }
 }
