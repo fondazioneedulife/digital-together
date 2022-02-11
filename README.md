@@ -1,16 +1,13 @@
 # 1
-aggiustare faq card. - ok
-# 2 
-navigation bar - ok 
-
+pensare a vere faq (buttare giù qualche idea)
+# 2
+aggiungere vere faq card
 # 3 
-filter in lista corsi 
+bottoni sx searchbar in  lista corsi 
+(collegare categoria scelta a un evento)
 
 # 4
-inserire la mappa
+mappa 
 
 # 5 
-creazione componente footer - ok
-
-# 6
-modificare landing page - ok
+migliorare footer (colori - icone - margini - scritte)
