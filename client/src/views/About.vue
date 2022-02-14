@@ -1,5 +1,5 @@
 <template>
-    <div class="c flex-col m-10 px-4 py-3">
+    <div class="c flex-col  px-4 py-3">
       <h1 class="font-bold m-8 text-3xl md:text-6xl">
         Ciò che riguarda 
         <span class="text-4xl md:text-7xl text-red-400">NOI</span>
