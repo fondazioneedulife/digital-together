@@ -9,4 +9,5 @@ import 'vue3-openlayers/dist/vue3-openlayers.css'
 
 axios.defaults.baseURL = 'http://localhost:8000'
 
-createApp(App).use(store).use(router, axios, OpenLayersMap).mount('#app')
+const app = createApp(App);
+app.use(router, axios, store, OpenLayersMap).mount('#app')

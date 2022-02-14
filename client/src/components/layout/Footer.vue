@@ -1,29 +1,34 @@
 <template>
-    <footer class="bg-gray-800 p-5 grid grid-cols-1  md:grid-cols-12">
-      <div class="md:col-span-2 pb-2 md:mb-0 m-8">
-        <p class="text-gray-200">Contatti</p>
-        <ul class="pt-5 text-gray-400">
-          <li>351 524 3518</li>
-          <li>37100lab@comune.verona.it</li>
-          <li>vie Marchi, 12, 37135 Verona VR</li>
-        </ul>
+    <footer class="bg-white p-5 grid grid-cols-1 md:grid-cols-12">
+    <div class="flex md:col-span-1"></div>
+      <div class="flex md:col-span-2 justify-center md:items-start text-center md:text-left">
+        <span class="text-gray-400">
+          <span><router-link to="/"><img class="w-24 h-24" src='@/assets/Logo.svg'></router-link></span>
+          <span><img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" class="bg-white rounded-lg w-6 h-6"/></span>
+        </span>
       </div>
-      <div class="md:col-span-2 pb-2 m-8 ml-32 md:mb-0">
-          <p class="text-gray-200">Pagine</p>
-        <ul class="pt-5 text-gray-400">
-          <li> <router-link to="/">Home</router-link> </li>
-          <li> <router-link to="/corsi">Corsi</router-link> </li>
-          <li> <router-link to="/about">About Us</router-link> </li>
-          <li> <router-link to="/faq">FAQ</router-link> </li>
-        </ul>
+      <div class="flex md:col-span-2 justify-center md:items-start text-center md:text-left">
+        <span class="md:w-0.5 md:h-full md:bg-orange-500 md:mr-5" />
+        <div class="flex flex-col pt-5 text-orange-400">
+          <!--<p class="text-orange-200 mb-3">Pagine</p>-->
+          <span> <router-link to="/corsi">Corsi</router-link> </span>
+          <span> <router-link to="/about">About Us</router-link> </span>
+          <span> <router-link to="/contatti">Contatti</router-link> </span>
+          <span> <router-link to="/faq">FAQ</router-link> </span>
+        </div>
       </div>
-      <div class="md:col-span-4 pb-2 m-8 ml-32 md:mb-0">
-        <ul class="pt-5 text-gray-400">
-          <li><img class="w-24 h-24" src='@/assets/Logo.svg'></li>
-          <li><img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" class="bg-white rounded-lg w-6 h-6"/></li>
-        </ul>
+      <div class="flex md:col-span-2 justify-center text-center md:text-left">
+        <span class="md:w-0.5 md:h-full md:bg-orange-500 md:mr-5" />
+        <div class="flex flex-col pt-5 text-orange-400">
+        <!--<p class="text-orange-200 mb-3">Contatti</p>-->
+          <span>351 524 3518</span>
+          <span>37100lab@comune.verona.it</span>
+          <span>vie Marchi, 12, 37135 Verona VR</span>
+        
+        </div>
       </div>
-      <div class="mt-5 md:col-span-12 text-center text-gray-400 pt-2">
+      
+      <div class="mt-5 md:col-span-12 text-center text-orange-400 pt-2">
         Created by  Digital Together ®
       </div>
   </footer>
