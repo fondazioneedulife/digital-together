@@ -83,7 +83,6 @@
             </button>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
       <div
         class="relative inline-block text-left shadow-xl"
@@ -145,22 +144,6 @@
               <p>Corso biennale</p></span
             >
           </div>
-=======
-        <div class="flex items-center justify-center">
-            <div 
-            class="flex-col items-center justify-center w-screen h-screen m-5 p-10 ml-24"
-            v-if="corsi != ''"
-            >
-                <CardCours 
-                    v-for="corso in corsi" :key="corso.id"
-                    v-bind="corso"
-                    :corso="corso"
-                 />
-            </div>
-            <div v-else>
-                <p>content not found</p>
-            </div>
->>>>>>> 9476f725bc98d6bd9bbf0cc5a6bad3fadd2d16a3
         </div>
       </div>
     </div>
@@ -206,7 +189,6 @@ import axios from "axios";
 import CardCours from "@/components/CardCours";
 import Spinner from "@/components/Spinner.vue";
 export default {
-<<<<<<< HEAD
   components: {
     CardCours,
     Spinner,
@@ -239,19 +221,6 @@ export default {
           }
         } else if (error.message) {
           this.errors.push("Something went wrong. Please try again!");
-=======
-    components:{
-        CardCours
-    },
-    data() {
-        return{
-            categorie:[],
-            query:'',
-            errors:[],
-            isOpen:false,
-            listed:'cerca',
-            corsi:[],
->>>>>>> 9476f725bc98d6bd9bbf0cc5a6bad3fadd2d16a3
         }
       });
     await axios
@@ -284,7 +253,6 @@ export default {
           console.log(error);
         });
     },
-<<<<<<< HEAD
     toggle() {
       if (this.isOpen == false) {
         this.isOpen = true;
@@ -315,74 +283,3 @@ export default {
   // }
 };
 </script>
-=======
-    async mounted(){
-        await axios
-            .get('/api/v1/categorie/')
-            .then(response => {
-                    this.categorie = response.data
-                })
-                .catch(error => {
-                    if (error.response) {
-                        for (const property in error.response.data) {
-                            this.errors.push(`${property}: ${error.response.data[property]}`)
-                        }
-                    } else if (error.message) {
-                        this.errors.push('Something went wrong. Please try again!')
-                    }
-                })
-        await axios
-                .get('/api/v1/corsi/')
-                .then(response => {
-                    this.corsi = response.data
-                })
-                .catch(error => {
-                    if (error.response) {
-                        for (const property in error.response.data) {
-                            this.errors.push(`${property}: ${error.response.data[property]}`)
-                        }
-                    } else if (error.message) {
-                        this.errors.push('Something went wrong. Please try again!')
-                    }
-                })
-    },
-    methods:{
-        async orderList(){
-            await axios
-                .post('/api/v1/corsi/search/',{'query':this.query})
-                .then(response => {
-                    this.corsi = response.data
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-        },
-        toggle(){
-            if (this.isOpen == false){
-                this.isOpen = true;
-            } else if(this.isOpen == true){
-                this.isOpen = false;
-                }
-        },
-        selected(categoria){
-            this.listed = categoria.nome
-            return this.listed
-        }
-    },
-    // computed:{
-    //     filtered() {
-    //         return this.listed.filter(corso => {
-    //             if (this.listed == "cerca") {
-    //             return true;
-    //             }
-    //             if (this.listed.toLowerCase() == corso.idCategory.nome.toLowerCase()){
-    //             return true;
-    //             }
-    //             return false;
-    //         });
-    //     }  
-    // }  
-
-}
-</script>
->>>>>>> 9476f725bc98d6bd9bbf0cc5a6bad3fadd2d16a3

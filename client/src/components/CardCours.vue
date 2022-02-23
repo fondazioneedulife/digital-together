@@ -1,6 +1,6 @@
 <template>
             <div class="grid grid-cols-1 xl:max-w-6xl max-w-4xl">
-                <div class="flex bg-red-100 rounded-lg px-4 py-6 m-2 shadow-2xl">
+                <div class="flex bg-orange-100 rounded-lg px-4 py-6 m-2 shadow-2xl">
                     <div class="flex flex-col items-start ml-4 w-full">
                         <div class="flex justify-between items-center w-full ">
                             <h4 class="text-xl font-light uppercase">{{corso.nome}}</h4>
