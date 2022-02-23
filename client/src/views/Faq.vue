@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="py-20 2xl:py-40 bg-red-50 h-screen">
+        <section class="py-20 2xl:py-40 bg-orange-50 h-screen">
         <div class="container px-4 mx-auto">
             <div class="mb-20 text-center">
             <span class="text-lg font-bold text-red-500">Hey! Have any questions?</span>
@@ -11,7 +11,7 @@
                 <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl shadow-xl" v-for="(question, index) in questions" :key="index">
                 <button class="flex w-full text-left" @click="OpenDrop(question)">
                     <div class="w-auto mr-8">
-                    <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-red-100 rounded-full">{{index+1}}</span>
+                    <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-orange-200 rounded-full">{{index+1}}</span>
                     </div>
                     <div class="w-full mt-3">
                     <div class="flex items-center justify-between">
