@@ -1,10 +1,10 @@
 <template>
     <div>
-        <section class="py-20 2xl:py-40 bg-orange-50 h-screen">
+        <section class="py-8 2xl:py-12 bg-orange-50">
         <div class="container px-4 mx-auto">
-            <div class="mb-20 text-center">
+            <div class="mb-8 text-center">
             <span class="text-lg font-bold text-red-500">Hey! Have any questions?</span>
-            <h2 class="mt-8 text-7xl font-bold font-heading">FAQ&apos;s</h2>
+            <h2 class="mb-12 mt-6 text-7xl font-bold font-heading">FAQ&apos;s</h2>
             </div>
             <div class="max-w-4xl mx-auto">
             <ul>
