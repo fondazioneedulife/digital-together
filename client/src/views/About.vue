@@ -1,5 +1,6 @@
 <template>
-    <div class="c flex-col  px-4 py-3">
+    <div class="flex flex-col mt-10 c md:grid md:grid-cols-8">
+    <div class='md:col-start-1 md:col-end-8 p-1'>
       <h1 class="font-bold m-8 text-3xl md:text-6xl">
         Ciò che riguarda 
         <span class="text-4xl md:text-7xl text-red-400">NOI</span>
@@ -10,6 +11,7 @@
             Normalmente se si ha bisogno di cercare un corso per sé o un parente, oppure semplicemente la scuola migliore per vostro figlio, si dovrebbe necessariamente girare su un’infinità di pagine sperando di ricordarsi tutti i nomi, oppure ritrovandosi con tantissime pagine aperte sul proprio browser, dovendo continuamente scambiare tra una e l’altra.
             <br> Tuttavia ci siamo noi, con il nostro sito, che ti permette di ricercare tutto sulla stessa pagina rendendo così ogni cosa più accessibile.</div>
         </div>
+      </div>
       </div>
     </div>
 </template>

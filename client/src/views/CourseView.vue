@@ -12,6 +12,7 @@
 <script>
 import Detail from '@/components/Detail.vue'
 import Breadcrumb from '@/components/layout/Breadcrumb.vue'
+
 //import Map from '@/components/Map.vue'
 export default {
     components:{

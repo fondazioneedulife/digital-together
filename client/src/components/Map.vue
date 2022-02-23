@@ -52,7 +52,8 @@ export default {
       [11.018044869025559, 45.52346858176481],
     ]);
 
-    const format = inject("ol-format");
+    const format = inject('ol-format');
+    console.log(format);
 
     const geoJson = new format.GeoJSON();
 
