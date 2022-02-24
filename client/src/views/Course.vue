@@ -168,7 +168,7 @@
     </div>
     <div class="flex items-center justify-center">
       <div
-        class="flex-col items-center justify-center w-screen h-screen m-5 p-10 ml-24"
+        class="flex flex-col w-screen h-auto my-4 p-4"
         v-if="corsi != ''"
       >
         <CardCours
