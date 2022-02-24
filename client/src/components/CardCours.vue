@@ -1,16 +1,19 @@
 <template>
   <div class="w-full md:w-9/12 place-self-center">
-    <div class="flex bg-orange-100 rounded-lg px-2 py-6 m-2 shadow-2xl">
-      <div class="hidden md:flex md:flex-col md:justify-center md:ml-4">
-        <div>
-          <img :src="corso.idCategory.immagine" alt="img" class="w-auto md:h-44 h-36 rounded-lg" />
-        </div>
+    <div
+      class="flex flex-col md:flex-row bg-orange-100 rounded-lg px-2 py-6 m-2 shadow-2xl items-center">
+      <div class="flex w-full md:w-auto mb-4 md:mb-0 px-4 md:px-0 md:flex md:flex-col md:justify-center md:ml-4">
+        <img
+          :src="corso.idCategory.immagine"
+          alt="img"
+          class="w-full md:w-auto md:h-44 h-36 rounded-lg"
+        />
       </div>
-      <div class="flex flex-col items-start ml-4 w-full">
+      <div class="flex flex-col items-start mx-4 w-full px-4 md:px-0">
         <div class="flex justify-between items-center w-full">
           <h4 class="text-xl font-light uppercase">{{ corso.nome }}</h4>
           <h4
-            class="text-white bg-orange-200 border border-orange-400 p-2 rounded font-light mr-4"
+            class="text-white bg-orange-200 border border-orange-400 p-2 rounded font-light"
           >
             {{ corso.idCategory.nome }}
           </h4>
