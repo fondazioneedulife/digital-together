@@ -53,8 +53,8 @@ export default {
                 code: "about"
                 },
                 {
-                label: "Contatti",
-                code: "contact"
+                label: "Opendata",
+                code: "opendata"
                 },
                 {
                 label: "FAQ",

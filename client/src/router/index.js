@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Course from '@/views/Course.vue'
 import CourseView from '@/views/CourseView.vue'
-import Contact from '@/views/Contact.vue'
+import Opendata from '@/views/Opendata.vue'
 import Faq from '@/views/Faq.vue'
 
 const routes = [
@@ -23,9 +23,9 @@ const routes = [
     component: CourseView
   },
   {
-    path: '/contatti',
-    name: 'contact',
-    component: Contact
+    path: '/opendata',
+    name: 'opendata',
+    component: Opendata
   },
   {
     path: '/faq',
