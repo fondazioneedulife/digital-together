@@ -26,12 +26,13 @@
           <p>email: {{ palestra.email }}</p>
           <p>indirizzo: {{ palestra.indirizzo }}</p>
         </div>
+        <div class="flex w-full px-5 py-6">
         <ol-map
           v-if="this.lat && this.long"
           ref="map"
           :loadTilesWhileAnimating="true"
           :loadTilesWhileInteracting="true"
-          style="height: 20rem; width: 60vw"
+          style="height: 20rem; width: 100%"
         >
           <ol-view
             ref="view"
@@ -63,6 +64,7 @@
             </ol-source-vector>
           </ol-vector-layer>
         </ol-map>
+        </div>
       </div>
     </div>
   </div>
