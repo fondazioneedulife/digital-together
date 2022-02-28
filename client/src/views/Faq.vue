@@ -47,13 +47,18 @@ export default {
         return{
             questions: [
                 {
-                    ask: "domanda1",
-                    answare: "risposta1",
+                    ask: "quali corsi ci sono?",
+                    answare: "i corsi presenti sono molti, vai nella sezione corsi e utilizza i filtri per trovare il corso giusto per te!",
                     isOpen: false
                 },
                 {
-                    ask: "domanda2",
-                    answare: "risposta2",
+                    ask: "quali tipo di corsi sono presenti?",
+                    answare: "quando ti rivolgi a questa piattaforma puoi trovare qualsiasi tipo di corso inerente alle competenze digitali. ;)",
+                    isOpen: false
+                },
+                {
+                    ask: "posso visualizzare la palestra digitale su una mappa?",
+                    answare: "si, in questo modo puoi vedere esattamente dove si svolge esattamente il corso e raggiungerlo rapidamente.",
                     isOpen: false
                 }
             ]
