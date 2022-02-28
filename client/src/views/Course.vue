@@ -206,7 +206,7 @@ export default {
     };
   },
   async mounted() {
-      this.isLoading= true;
+      this.isLoading = true;
       console.log();
     await axios
       .get("/api/v1/categorie/")
@@ -247,6 +247,7 @@ export default {
         .post("/api/v1/corsi/search/", { query: this.query })
         .then((response) => {
           this.corsi = response.data;
+          console.log(response.data)
           this.isLoading = false;
         })
         .catch((error) => {
