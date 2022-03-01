@@ -23,7 +23,7 @@
     </section>
     <section class="text-black mt-12">
       <div class="container mx-auto flex px-5 py-6 md:flex-row flex-col-reverse items-center" >
-        <div class="lg:w-full md:w-1/4 w-full h-96">
+        <div class="lg:w-full md:w-1/4 w-full">
           <Graphic class="object-cover object-center rounded w-auto h-full" />
         </div>
         <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
