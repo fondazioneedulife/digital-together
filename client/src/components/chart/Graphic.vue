@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 py-4 m-16">
+  <div>
     <div>
         <LineChart
         :chart-data="data"
