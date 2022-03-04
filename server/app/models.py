@@ -37,8 +37,9 @@ class Category(models.Model):
 class Courses(models.Model):
     id = models.AutoField(primary_key=True,  auto_created=True)
     nome = models.CharField(max_length=80)
-    data_inizio = models.DateField(auto_now_add=True)
-    data_fine = models.DateField(auto_now=True)
+    data_inizio = models.DateField()
+    data_fine = models.DateField()
+    durata = models.IntegerField(max_length=200, null=True)
     descrizione = models.CharField(max_length=200)
     docente = models.CharField(max_length=20)
     idGym = models.ForeignKey(Gyms, related_name='corso', on_delete=models.CASCADE)
