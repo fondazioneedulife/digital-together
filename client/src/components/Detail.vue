@@ -5,8 +5,8 @@
         <div class="flex text-3xl font-bold content-start text-left py-4">
           {{ categoria.nome }}
         </div>
-        <div class="flex w-full h-44">
-          <img :src="categoria.immagine" alt="img" class="w-full" />
+        <div class="flex w-full h-1/4">
+          <img :src="categoria.immagine" alt="img" class="w-full h-full object-cover	" />
         </div>
         <div class="justify-between px-5 py-6 text-xl text-left">
           <span class="text-3xl font-bold">{{ corso.nome }}</span> <br />

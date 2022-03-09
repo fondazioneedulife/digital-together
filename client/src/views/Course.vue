@@ -63,7 +63,6 @@
           />
           <div class="p-2">
             <button
-              @click="orderList()"
               class="bg-orange-300 text-white rounded-full p-2 hover:bg-red-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             >
               <svg
@@ -124,9 +123,9 @@
             <!--collegare checkbox alla durata del corso-->
             <p class="flex flex-row">Durata corso</p>
             <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" />
-              <p>- 40 ore</p></span
-            >
+              ><input type="checkbox" class="mr-1" @click="filteredByHour40()" />
+              <p>- 40 ore</p></span>
+
             <span class="flex flex-row items-center"
               ><input type="checkbox" class="mr-1" />
               <p>-100 ore</p></span
@@ -163,24 +162,31 @@
         v-for="error in errors"
         v-bind:key="error"
       >
-        *attenzione: {{ error }}*
+        attenzione: {{ error }}
       </p>
     </div>
     <div class="flex items-center justify-center">
       <div
         class="flex flex-col w-screen h-auto my-4 p-4"
-        v-if="corsi != ''"
-      >
+        v-if="filteredCorso.length"
+      >           
+          <!-- v-for="corso in corsi"
+          :key="corso.id" -->
         <CardCours
-          v-for="corso in corsi"
-          :key="corso.id"
+          v-for="(corso, index) in filteredCorso" 
+          :key="index"
           v-bind="corso"
           :corso="corso"
         />
       </div>
-      <div v-else>
-        <p>content not found</p>
+        <div v-else
+        class="flex justify-center w-screen h-auto my-4 p-4 font-bold p-5 text-gray-400"
+        >
+        Nessuna corso corrisponde alla tua ricerca :(
       </div>
+      <!-- <div v-else>
+        <p>content not found</p>
+      </div> -->
     </div>
   </div>
 </template>
@@ -202,11 +208,11 @@ export default {
       filterOpen: false,
       listed: "cerca",
       corsi: [],
-      isLoading: true
+      isLoading: true,
     };
   },
   async mounted() {
-      this.isLoading= true;
+      this.isLoading = true;
       console.log();
     await axios
       .get("/api/v1/categorie/")
@@ -239,19 +245,23 @@ export default {
         }
       });
   },
+    computed: {
+    filteredCorso() {
+      return this.corsi.filter(corsi => {
+        if (this.query == "") {
+          return true;
+        }
+        if (this.query.toLowerCase() == corsi.nome.toLowerCase()) {
+          return true;
+        }
+        return false;
+      });
+    }
+  },
   methods: {
-    async orderList() {
-        this.isLoading= true;
-      console.log();
-      await axios
-        .post("/api/v1/corsi/search/", { query: this.query })
-        .then((response) => {
-          this.corsi = response.data;
-          this.isLoading = false;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    filteredByHour40(){
+      const value = this.corsi.sort((a, b) => (a.durata - b.durata))
+      console.log(value)
     },
     toggle() {
       if (this.isOpen == false) {
@@ -283,3 +293,4 @@ export default {
   // }
 };
 </script>
+
