@@ -4,7 +4,7 @@
       <div class="flex md:col-span-2 justify-center md:items-start text-center md:text-left">
         <span class="text-gray-400">
           <span><router-link to="/"><img class="w-24 h-24" src='@/assets/Logo.svg'></router-link></span>
-          <span><img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" class="bg-white rounded-lg w-6 h-6"/></span>
+          <span class='w-6 h-6'><a  class='w-6 h-6' href='https://37100lab.comune.verona.it/' target='_blank'><img src="https://img.icons8.com/ios/50/000000/instagram.svg" class="bg-white rounded-lg w-auto h-6"/></a></span>
         </span>
       </div>
       <div class="flex md:col-span-2 justify-center md:items-start text-center md:text-left">

@@ -17,7 +17,7 @@
                     <div class="flex items-center justify-between">
                         <h3 class="text-xl font-bold">{{question.ask}}</h3>
                         <span class="ml-4">
-                        <svg v-if="question.isOpen == true" class="w-4 h-4" width="18" height="10" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg v-if="question.isOpen == true" class="w-4 h-4 ring-orange-500" width="18" height="10" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.18267 9.00018C0.910673 9.26818 0.473672 9.26818 0.203672 9.00018C-0.0663284 8.73218 -0.0673279 8.29918 0.203672 8.03118L8.11167 0.201183C8.38167 -0.0668173 8.81867 -0.0668173 9.09067 0.201183L16.9987 8.03118C17.2687 8.29918 17.2687 8.73218 16.9987 9.00018C16.7277 9.26818 16.2897 9.26818 16.0197 9.00018L8.60067 1.85918L1.18267 9.00018Z" fill="#1F40FF"></path>
                         </svg>
                         <svg v-else class="w-4 h-4" width="18" height="10" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
                         </svg>
                         </span>
                     </div>
-                    <div v-if='question.isOpen' class="mt-6 border-l-2 border-gray-50 ">
+                    <div v-if='question.isOpen' class="mt-6 ">
                         <p class="font-light mb-5 text-xl">{{question.answare}}</p>
                     </div>
                     </div>
@@ -58,7 +58,7 @@ export default {
                 },
                 {
                     ask: "posso visualizzare la palestra digitale su una mappa?",
-                    answare: "si, in questo modo puoi vedere esattamente dove si svolge esattamente il corso e raggiungerlo rapidamente.",
+                    answare: "si, in questo modo puoi vedere esattamente dove si svolge il corso e raggiungerlo rapidamente.",
                     isOpen: false
                 }
             ]

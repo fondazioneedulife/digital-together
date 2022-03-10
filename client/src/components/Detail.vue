@@ -12,7 +12,7 @@
           <span class="text-3xl font-bold">{{ corso.nome }}</span> <br />
           <p>
             data inizio: {{ corso.data_inizio }} / data fine:
-            {{ corso.data_fine }}
+            {{ corso.data_fine }} /<br class='md:hidden'> durata: {{corso.durata}} ore
           </p>
         </div>
         <hr />
