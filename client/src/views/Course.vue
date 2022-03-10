@@ -34,8 +34,11 @@
           aria-labelledby="menu-button"
           tabindex="-1"
         >
-          <div role="none">
+          <div role="none"
+          @click="orderList()"
+          >
             <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+            
             <p
               v-for="categoria in categorie"
               :key="categoria.id"
@@ -104,44 +107,18 @@
           aria-orientation="vertical"
           aria-labelledby="menu-button"
           tabindex="-1"
-        >
-          <div>
-            <!--collegare aree informative corso-->
-            <p
-              v-for="categoria in categorie"
-              :key="categoria.id"
-              @click="selected(categoria)"
-              class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              {{ categoria.nome }}
-            </p>
-          </div>
+        > 
           <div class="flex flex-col p-2">
             <!--collegare checkbox alla durata del corso-->
             <p class="flex flex-row">Durata corso</p>
-            <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" @click="filteredByHour40()" />
-              <p>- 40 ore</p></span>
-
-            <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" />
-              <p>-100 ore</p></span
-            >
-            <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" />
-              <p>- 400 ore</p></span
-            >
-            <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" />
-              <p>Corso annuale</p></span
-            >
-            <span class="flex flex-row items-center"
-              ><input type="checkbox" class="mr-1" />
-              <p>Corso biennale</p></span
-            >
+            <span 
+              class="flex flex-row items-center"
+              v-for="(corso, index) in corsi"
+              :key="index"
+              ><input
+                @click="setHour(corso.durata)"
+                type="checkbox" class="mr-1" />
+              <p>{{corso.durata}} ore</p></span>
           </div>
         </div>
       </div>
@@ -162,7 +139,7 @@
         v-for="error in errors"
         v-bind:key="error"
       >
-        attenzione: {{ error }}
+        *attenzione: {{ error }}*
       </p>
     </div>
     <div class="flex items-center justify-center">
@@ -206,14 +183,15 @@ export default {
       errors: [],
       isOpen: false,
       filterOpen: false,
-      listed: "cerca",
+      listed: "categoria",
       corsi: [],
       isLoading: true,
+      //duration:['40 ore','100 ore', '400 ore', 'annuale', 'biennale'],
+      time:''
     };
   },
   async mounted() {
       this.isLoading = true;
-      console.log();
     await axios
       .get("/api/v1/categorie/")
       .then((response) => {
@@ -249,20 +227,27 @@ export default {
     filteredCorso() {
       return this.corsi.filter(corsi => {
         if (this.query == "") {
+          this.listed = 'categoria'
           return true;
         }
-        if (this.query.toLowerCase() == corsi.nome.toLowerCase()) {
+        if (corsi.nome.toLowerCase().startsWith(this.query.toLowerCase())) {
           return true;
+        }
+        if (corsi.idCategory.nome.toLowerCase() == this.listed.toLowerCase()){
+          return true;
+        }
+        if(corsi.durata == this.time){
+            return true
         }
         return false;
       });
+
     }
   },
   methods: {
-    filteredByHour40(){
-      const value = this.corsi.sort((a, b) => (a.durata - b.durata))
-      console.log(value)
-    },
+    orderList() {
+      this.query = this.listed
+    },  
     toggle() {
       if (this.isOpen == false) {
         this.isOpen = true;
@@ -277,9 +262,16 @@ export default {
       this.listed = categoria.nome;
       return this.listed;
     },
+    setHour(value){
+      this.time = value
+      this.query = this.time
+      console.log(this.corsi)
+      // const result = this.corsi.sort((a, b) => a.durata - b.durata)
+      // console.log(result)
+    }
   },
   // computed:{
-  //     filtered() {
+  //     filtered() { 
   //         return this.listed.filter(corso => {
   //             if (this.listed == "cerca") {
   //             return true;
@@ -293,4 +285,3 @@ export default {
   // }
 };
 </script>
-
