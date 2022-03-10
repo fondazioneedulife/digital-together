@@ -26,7 +26,7 @@
         <div class="lg:w-full md:w-1/4 w-full">
           <Graphic class="object-cover object-center rounded w-auto h-full" />
         </div>
-        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
+        <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
             Alfabetizzazione su
             <br class="hidden lg:inline-block" />informazione e dati
@@ -36,7 +36,7 @@
     </section>
     <section class="text-gray-700 body-font">
       <div class="container mx-auto flex px-5 py-6 md:flex-row flex-col items-center">
-        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
+        <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
             Comunicazione <br class="hidden lg:inline-block" />e collaborazione
           </h1>
@@ -51,7 +51,7 @@
         <div class="lg:w-full md:w-1/4 w-full">
           <Graphic3 class="object-cover object-center rounded" />
         </div>
-        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center" >
+        <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center" >
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" >
             Creazione di <br class="hidden lg:inline-block" />contenuti digitali
           </h1>
@@ -60,7 +60,7 @@
     </section>
     <section class="text-gray-700 body-font">
       <div class="container mx-auto flex px-5 py-6 md:flex-row flex-col items-center">
-        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
+        <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-center md:text-left mb-3 md:mb-0 items-center text-center">
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
             Sicurezza
             <br class="hidden lg:inline-block" />

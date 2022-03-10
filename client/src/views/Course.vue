@@ -4,7 +4,7 @@
       <div class="relative inline-block text-left shadow-xl" @click="toggle()">
         <button
           type="button"
-          class="inline-flex h-16 items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-lg font-light text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          class="inline-flex h-16 items-center w-full rounded-md border border-orange-300 shadow-sm px-4 py-2 bg-orange-500 text-lg font-light text-white hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-100 focus:ring-orange-500"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="m-3 w-2/4 shadow-xl rounded-lg border">
+      <div class="m-3 w-2/4 shadow-xl rounded-lg border border-orange-300">
         <div
           class="px-2 flex items-center border-1 bg-white shadow-sm rounded-full"
         >
@@ -92,7 +92,7 @@
       >
         <button
           type="button"
-          class="inline-flex h-16 items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-lg font-light text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          class="inline-flex h-16 items-center w-full rounded-md border border-orange-300 shadow-sm px-4 py-2 bg-orange-500 text-lg font-light text-white hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-100 focus:ring-orange-500"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -108,7 +108,7 @@
           aria-labelledby="menu-button"
           tabindex="-1"
         > 
-          <div class="flex flex-col p-2">
+          <div class="flex flex-col p-2 border border-orange-300">
             <!--collegare checkbox alla durata del corso-->
             <p class="flex flex-row">Durata corso</p>
             <span 

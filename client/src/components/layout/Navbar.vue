@@ -8,7 +8,7 @@
             v-for="link in navLinks"
             :key="link.code"
             :class="{
-                    'border-b border-red-400': link.code == currentRouteName,
+                    'border-b border-orange-400': link.code == currentRouteName,
                     '': link.code !== currentRouteNam
             }"
             @click="goToLink(link)"

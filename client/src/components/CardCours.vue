@@ -13,7 +13,7 @@
         <div class="flex justify-between items-center w-full">
           <h4 class="text-xl font-light uppercase">{{ corso.nome }}</h4>
           <h4
-            class="text-white bg-orange-200 border border-orange-400 p-2 rounded font-light"
+            class="text-white bg-orange-500 border border-orange-400 p-2 rounded font-light"
           >
             {{ corso.idCategory.nome }}
           </h4>
@@ -37,7 +37,7 @@
         <button
           type="button"
           @click="GoToCorsiView(corso)"
-          class="p-2 leading-none rounded font-medium mt-3 bg-orange-300 text-xs uppercase"
+          class="p-2 leading-none rounded font-medium mt-3 bg-orange-500 text-xs uppercase text-white"
         >
           visualizza
         </button>
