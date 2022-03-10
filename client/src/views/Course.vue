@@ -66,7 +66,7 @@
           />
           <div class="p-2">
             <button
-              class="bg-orange-300 text-white rounded-full p-2 hover:bg-red-400 focus:outline-none w-12 h-12 flex items-center justify-center"
+              class="bg-orange-500 text-white rounded-full p-2 hover:bg-red-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

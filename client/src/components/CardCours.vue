@@ -9,11 +9,11 @@
           class="w-full md:w-auto md:h-44 h-36 rounded-lg"
         />
       </div>
-      <div class="flex flex-col items-start mx-4 w-full px-4 md:px-0">
-        <div class="flex justify-between items-center w-full">
-          <h4 class="text-xl font-light uppercase">{{ corso.nome }}</h4>
+      <div class="flex flex-col items-start w-full px-4 md:px-4 md:px-0">
+        <div class="flex justify-between items-center w-full ">
+          <h4 class="text-xl font-light uppercase whitespace-nowrap">{{ corso.nome }}</h4>
           <h4
-            class="text-white bg-orange-500 border border-orange-400 p-2 rounded font-light"
+            class="text-white bg-orange-500 border border-orange-400 p-2 rounded font-light "
           >
             {{ corso.idCategory.nome }}
           </h4>
