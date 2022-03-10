@@ -31,6 +31,7 @@
                     </div>
                 </button>
                 </li>
+            <BotBanner/>
             </ul>
             </div>
         </div>
@@ -38,11 +39,10 @@
     </div>
 </template>
 <script>
-//import BotBanner from '@/components/BotBanner.vue'
+import BotBanner from '@/components/BotBanner.vue'
 export default {
     name: 'Faq',
-    components:{ //BotBanner 
-    },
+    components:{ BotBanner },
     data(){
         return{
             questions: [
