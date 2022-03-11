@@ -6,7 +6,7 @@
         <img
           :src="corso.idCategory.immagine"
           alt="img"
-          class="w-full md:w-auto md:h-44 h-36 rounded-lg"
+          class="w-full md:w-auto md:h-48 h-36 rounded-lg "
         />
       </div>
       <div class="flex flex-col items-start w-full px-4 md:px-4 md:px-0">
