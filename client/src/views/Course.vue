@@ -4,7 +4,7 @@
       <div class="relative inline-block text-left shadow-xl" @click="toggle()">
         <button
           type="button"
-          class="inline-flex h-16 items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-lg font-light text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          class="inline-flex h-16 items-center w-full rounded-md border border-orange-300 shadow-sm px-4 py-2 bg-orange-500 text-lg font-light text-white hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-100 focus:ring-orange-500"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -34,11 +34,9 @@
           aria-labelledby="menu-button"
           tabindex="-1"
         >
-          <div role="none"
-          @click="orderList()"
-          >
+          <div role="none" @click="orderList()">
             <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-            
+
             <p
               v-for="categoria in categorie"
               :key="categoria.id"
@@ -53,12 +51,12 @@
           </div>
         </div>
       </div>
-      <div class="m-3 w-2/4 shadow-xl rounded-lg border">
+      <div class="m-3 w-2/4 shadow-xl rounded-lg border border-orange-300">
         <div
           class="px-2 flex items-center border-1 bg-white shadow-sm rounded-full"
         >
           <input
-            class="rounded-l-sm w-full py-2 px-6 text-gray-700 rounded-lg leading-tight focus:outline-none"
+            class="rounded-l-sm w-full h-16 py-2 px-6 text-gray-700 rounded-lg leading-tight focus:outline-none"
             id="search"
             type="text"
             placeholder="Search"
@@ -66,7 +64,7 @@
           />
           <div class="p-2">
             <button
-              class="bg-orange-300 text-white rounded-full p-2 hover:bg-red-400 focus:outline-none w-12 h-12 flex items-center justify-center"
+              class="hidden md:bg-orange-500 md:text-white md:rounded-full md:p-2 md:hover:bg-red-400 md:focus:outline-none md:w-12 md:h-12 md:flex md:items-center md:justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,13 +90,16 @@
       >
         <button
           type="button"
-          class="inline-flex h-16 items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-lg font-light text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          class="inline-flex h-16 items-center w-full rounded-md border border-orange-300 shadow-sm px-4 py-2 bg-orange-500 text-lg font-light text-white hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-100 focus:ring-orange-500"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
         >
           Filtri
-          <img class="-mr-1 ml-2 h-5 w-5" src="@/assets/imbutofilter.svg" />
+          <img
+            class="hidden md:mr-1 md:ml-2 md:h-5 md:w-5"
+            src="@/assets/imbutofilter.svg"
+          />
         </button>
         <div
           :class="filterOpen ? 'block' : 'hidden'"
@@ -107,29 +108,33 @@
           aria-orientation="vertical"
           aria-labelledby="menu-button"
           tabindex="-1"
-        > 
-          <div class="flex flex-col p-2">
+        >
+          <div class="flex flex-col p-2 border border-orange-300">
             <!--collegare checkbox alla durata del corso-->
             <p class="flex flex-row">Durata corso</p>
-            <span 
+            <span
               class="flex flex-row items-center"
               v-for="(corso, index) in corsi"
               :key="index"
               ><input
                 @click="setHour(corso.durata)"
-                type="checkbox" class="mr-1" />
-              <p>{{corso.durata}} ore</p></span>
+                type="checkbox"
+                class="mr-1"
+              />
+              <p>{{ corso.durata }} ore</p></span
+            >
           </div>
         </div>
       </div>
     </div>
-    <div v-if="!isLoading">
-      </div>
-      <div v-else class="flex items-center justify-center p-10">
-        <span class="text-gray-400 font-bold text-center text-xl flex flex-col items-center">
-          <Spinner class="w-8 h-8"></Spinner>
-        </span>
-      </div>
+    <div v-if="!isLoading"></div>
+    <div v-else class="flex items-center justify-center p-10">
+      <span
+        class="text-orange-400 font-bold text-center text-xl flex flex-col items-center"
+      >
+        <Spinner class=''></Spinner>
+      </span>
+    </div>
     <div
       class="flex items-center justify-center px-3 py-2"
       v-if="errors.length"
@@ -146,19 +151,20 @@
       <div
         class="flex flex-col w-screen h-auto my-4 p-4"
         v-if="filteredCorso.length"
-      >           
-          <!-- v-for="corso in corsi"
+      >
+        <!-- v-for="corso in corsi"
           :key="corso.id" -->
         <CardCours
-          v-for="(corso, index) in filteredCorso" 
+          v-for="(corso, index) in filteredCorso"
           :key="index"
           v-bind="corso"
           :corso="corso"
         />
       </div>
-        <div v-else
+      <div
+        v-else
         class="flex justify-center w-screen h-auto my-4 p-4 font-bold p-5 text-gray-400"
-        >
+      >
         Nessuna corso corrisponde alla tua ricerca :(
       </div>
       <!-- <div v-else>
@@ -186,12 +192,12 @@ export default {
       listed: "categoria",
       corsi: [],
       isLoading: true,
-      //duration:['40 ore','100 ore', '400 ore', 'annuale', 'biennale'],
-      time:''
+      // duration:['40 ore','100 ore', '400 ore', 'annuale', 'biennale'],
+      time: "",
     };
   },
   async mounted() {
-      this.isLoading = true;
+    this.isLoading = true;
     await axios
       .get("/api/v1/categorie/")
       .then((response) => {
@@ -207,11 +213,12 @@ export default {
           this.errors.push("Something went wrong. Please try again!");
         }
       });
+    this.isLoading = true;
     await axios
       .get("/api/v1/corsi/")
       .then((response) => {
-        this.isLoading = false;
         this.corsi = response.data;
+        this.isLoading = false;
       })
       .catch((error) => {
         if (error.response) {
@@ -223,31 +230,30 @@ export default {
         }
       });
   },
-    computed: {
+  computed: {
     filteredCorso() {
-      return this.corsi.filter(corsi => {
+      return this.corsi.filter((corsi) => {
         if (this.query == "") {
-          this.listed = 'categoria'
+          this.listed = "categoria";
           return true;
         }
         if (corsi.nome.toLowerCase().startsWith(this.query.toLowerCase())) {
           return true;
         }
-        if (corsi.idCategory.nome.toLowerCase() == this.listed.toLowerCase()){
+        if (corsi.idCategory.nome.toLowerCase() == this.listed.toLowerCase()) {
           return true;
         }
-        if(corsi.durata == this.time){
-            return true
+        if (corsi.durata == this.time) {
+          return true;
         }
         return false;
       });
-
-    }
+    },
   },
   methods: {
     orderList() {
-      this.query = this.listed
-    },  
+      this.query = this.listed;
+    },
     toggle() {
       if (this.isOpen == false) {
         this.isOpen = true;
@@ -262,13 +268,13 @@ export default {
       this.listed = categoria.nome;
       return this.listed;
     },
-    setHour(value){
-      this.time = value
-      this.query = this.time
-      console.log(this.corsi)
+    setHour(value) {
+      this.time = value;
+      this.query = this.time;
+      console.log(this.corsi, this.time);
       // const result = this.corsi.sort((a, b) => a.durata - b.durata)
       // console.log(result)
-    }
+    },
   },
   // computed:{
   //     filtered() { 

@@ -20,11 +20,12 @@
         <ol-source-osm />
       </ol-tile-layer>
 
+      <span v-for="gym in palestra" v-bind:key="gym.idGym">
       <ol-vector-layer>
         <ol-source-vector>
           <ol-feature>
             <ol-geom-multi-point
-              :coordinates="coordinates"
+              :coordinates="[[gym.lat, gym.long]]"
             ></ol-geom-multi-point>
             <ol-style>
               <ol-style-icon :src="markerIcon" :scale="1"></ol-style-icon>
@@ -32,6 +33,7 @@
           </ol-feature>
         </ol-source-vector>
       </ol-vector-layer>
+      </span>
     </ol-map>
   </div>
 </template>
@@ -40,6 +42,7 @@
 import { ref, inject } from "vue";
 
 import markerIcon from "@/assets/PointMap.svg";
+import axios from "axios";
 export default {
   setup() {
     const center = ref([11, 45.44]);
@@ -47,9 +50,7 @@ export default {
     const zoom = ref(11);
     const rotation = ref(0);
     const coordinates = ref([
-      [10.999020713202624, 45.43096190830851],
-      [10.98563922484148, 45.40336630316935],
-      [11.018044869025559, 45.52346858176481],
+      [0,0],      
     ]);
 
     const format = inject('ol-format');
@@ -70,7 +71,28 @@ export default {
   data() {
       return {
           fullscreencontrol: true,
+          lat: "",
+          long: "",
+          palestra: {},
+          errors: [],
       }
-  }
+  },
+  async mounted() {
+    await axios
+      .get("/api/v1/palestre/")
+      .then((response) => {
+        this.palestra = response.data;
+        console.log(this.palestra);
+      })
+      .catch((error) => {
+        if (error.response) {
+          for (const property in error.response.data) {
+            this.errors.push(`${property}: ${error.response.data[property]}`);
+          }
+        } else if (error.message) {
+          this.errors.push("Something went wrong. Please try again!");
+        }
+      });
+  },
 };
 </script>
