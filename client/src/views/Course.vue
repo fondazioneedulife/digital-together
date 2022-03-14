@@ -234,7 +234,7 @@ export default {
     filteredCorso() {
       return this.corsi.filter((corsi) => {
         if (this.query == "") {
-          this.listed = "categoria";
+          this.listed = 'categoria';
           return true;
         }
         if (corsi.nome.toLowerCase().startsWith(this.query.toLowerCase())) {
