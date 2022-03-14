@@ -37,6 +37,7 @@ def search(request):
     if query:
         queryset = Courses.objects.filter(nome__contains=query) 
         serializer = CoursesSerializer(queryset, many=True)
+        print()
         return Response(serializer.data)
     else:
         return Response({"corsi": []})
