@@ -1,7 +1,7 @@
 <template>
-  <div class="flex w-full">
+  <div class="flex w-full ">
     <div class="flex flex-row w-full font-light">
-      <div class="flex flex-col w-full h-auto">
+      <div class="flex flex-col w-full">
         <div class="flex text-3xl font-bold content-start text-left py-4">
           {{ categoria.nome }}
         </div>

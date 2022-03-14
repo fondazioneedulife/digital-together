@@ -58,7 +58,7 @@
           class="px-2 flex items-center border-1 bg-white shadow-sm rounded-full"
         >
           <input
-            class="rounded-l-sm w-full py-2 px-6 text-gray-700 rounded-lg leading-tight focus:outline-none"
+            class="rounded-l-sm w-full h-16 py-2 px-6 text-gray-700 rounded-lg leading-tight focus:outline-none"
             id="search"
             type="text"
             placeholder="Search"
@@ -66,7 +66,7 @@
           />
           <div class="p-2">
             <button
-              class="bg-orange-500 text-white rounded-full p-2 hover:bg-red-400 focus:outline-none w-12 h-12 flex items-center justify-center"
+              class="hidden md:bg-orange-500 md:text-white md:rounded-full md:p-2 md:hover:bg-red-400 md:focus:outline-none md:w-12 md:h-12 md:flex md:items-center md:justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@
           aria-haspopup="true"
         >
           Filtri
-          <img class="-mr-1 ml-2 h-5 w-5" src="@/assets/imbutofilter.svg" />
+          <img class="hidden md:mr-1 md:ml-2 md:h-5 md:w-5" src="@/assets/imbutofilter.svg" />
         </button>
         <div
           :class="filterOpen ? 'block' : 'hidden'"
@@ -186,7 +186,7 @@ export default {
       listed: "categoria",
       corsi: [],
       isLoading: true,
-      //duration:['40 ore','100 ore', '400 ore', 'annuale', 'biennale'],
+      // duration:['40 ore','100 ore', '400 ore', 'annuale', 'biennale'],
       time:''
     };
   },
@@ -210,8 +210,9 @@ export default {
     await axios
       .get("/api/v1/corsi/")
       .then((response) => {
-        this.isLoading = false;
+        
         this.corsi = response.data;
+        this.isLoading = false;
       })
       .catch((error) => {
         if (error.response) {
