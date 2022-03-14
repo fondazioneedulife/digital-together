@@ -2,7 +2,7 @@
   <div class="w-full md:w-9/12 place-self-center">
     <div
       class="flex flex-col md:flex-row bg-orange-100 rounded-lg px-2 py-6 m-2 shadow-2xl items-center">
-      <div class="flex w-full md:w-auto mb-4 md:mb-0 px-4 md:px-0 md:flex md:flex-col md:justify-center md:ml-4">
+      <div class="flex w-auto md:w-auto mb-4 md:mb-0 px-4 md:px-0 md:flex md:flex-col md:justify-center md:ml-4">
         <img
           :src="corso.idCategory.immagine"
           alt="img"
