@@ -277,7 +277,7 @@ export default {
     },
   },
   // computed:{
-  //     filtered() {
+  //     filtered() { 
   //         return this.listed.filter(corso => {
   //             if (this.listed == "cerca") {
   //             return true;
