@@ -37,7 +37,7 @@
     <div class="flex flex-col mt-10 a md:grid md:grid-cols-8 md:h-96 md:mt-20 items-center">
         <div class="justify-items-center w-96 mb-4 md:w-96 md:col-start-2 md:col-end-4 p-1"><img src='@/assets/Landing_1.svg'></div>
         <div class="justify-items-center text-left md:col-start-5 rounded-full md:col-end-8 p-5 md:text-left">
-            <h1 class='font-medium text-4xl md:text-6xl mb-20'>LE SCUOLE E I CORSI CHE CERCHI A PORTATA DI MANO</h1>
+            <h1 class='font-bold text-4xl md:text-5xl mb-20'>LE SCUOLE E I CORSI CHE CERCHI A PORTATA DI MANO</h1>
             <router-link to='/corsi' class='btn text-white p-2 rounded'>Scopri di più</router-link>
         </div>
     </div>

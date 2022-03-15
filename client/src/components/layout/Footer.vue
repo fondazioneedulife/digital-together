@@ -17,7 +17,7 @@
           <!--<p class="text-orange-200 mb-3">Pagine</p>-->
           <span> <router-link to="/corsi">Corsi</router-link> </span>
           <span> <router-link to="/about">About Us</router-link> </span>
-          <span> <router-link to="/contatti">Contatti</router-link> </span>
+          <span> <router-link to="/opendata">Opendata</router-link> </span>
           <span> <router-link to="/faq">FAQ</router-link> </span>
         </div>
       </div>

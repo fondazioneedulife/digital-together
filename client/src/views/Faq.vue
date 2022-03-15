@@ -4,7 +4,7 @@
         <div class="container px-4 mx-auto">
             <div class="mb-8 text-center">
             <span class="text-lg font-bold text-red-500">Hey! Have any questions?</span>
-            <h2 class="mb-12 mt-6 text-7xl font-bold font-heading">FAQ&apos;s</h2>
+            <h2 class="mb-12 mt-6 md:text-6xl text-4xl font-bold font-heading">FAQ&apos;s</h2>
             </div>
             <div class="max-w-4xl mx-auto">
             <ul>
