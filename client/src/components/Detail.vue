@@ -25,7 +25,7 @@
         <div class="flex px-5 pb-6">
           <p>{{ corso.descrizione }}</p>
         </div>
-        <h1 class="px-5 py-2 text-xl text-orange-400">contatti:</h1>
+        <h1 class="px-5 py-2 text-xl text-orange-400">contatti <span class="bold">{{ palestra.nome }}</span>:</h1>
         <div class="flex flex-col px-5 py-2">
           <p>cellulare: {{ palestra.telefono }}</p>
           <p>email: {{ palestra.email }}</p>
